@@ -117,7 +117,7 @@ angular.module('ionicLazyLoad')
                     var clientWidth = $document[0].documentElement.clientWidth;
                     var imageRect = $element[0].getBoundingClientRect();
                     return (imageRect.top >= 0 && imageRect.top <= clientHeight + parseInt($attributes.imageLazyDistanceFromBottomToLoad))
-                        && (imageRect.left >= 0 && imageRect.left <= clientWidth + parseInt($attributes.imageLazyDistanceFromRightToLoad));
+                        && (imageRect.left >= -1 && imageRect.left <= clientWidth + parseInt($attributes.imageLazyDistanceFromRightToLoad));
                 }
 
                 // bind listener
@@ -135,7 +135,7 @@ angular.module('ionicLazyLoad')
                         loadImage();
                         deregistration();
                     }
-                }, 500);
+                }, 0);
             }
         };
     }]);
